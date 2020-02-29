@@ -1,0 +1,40 @@
+/**
+ * Write a description of class AreaofTriangle here.
+ *
+ * @author ()
+ * @version (2/27/2020)
+ */
+import java.util.Scanner;
+ 
+public class Palindrome
+{
+ 
+ public static void main(String[] args) 
+ {
+ 
+  Scanner stdIn= new Scanner (System.in);
+  String reverse="";
+  String loopcheck = "";
+  
+  do{
+  System.out.println("Enter a word or a phrase: ");
+  System.out.println("Enter 'q' to quit");
+  String original= stdIn.nextLine();
+  
+  for(int wordPhrase= original.length()-1;wordPhrase>=0;wordPhrase--){
+      reverse=reverse+original.charAt(wordPhrase);
+    }
+  if(original.equals(reverse)){
+        System.out.println("Your word/phrase is a palindrome");
+    }
+    else
+    {
+        System.out.println("Your word/phrase is not a palindrome");
+        
+    }
+    System.out.println("Do you want to continue y or n ?");
+    loopcheck = stdIn.nextLine();
+} while(loopcheck.equalsIgnoreCase("Y"));
+  }// end main
+}// end class Pelindrome
+  
