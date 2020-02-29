@@ -1,0 +1,118 @@
+
+/**
+ * Write a description of class AreaCalculator here.
+ *
+ * @author ()
+ * @version (02/28/2020)
+ */
+import java.util.Scanner;
+import java.lang.Math;
+
+
+public class AreaCalculator 
+{
+    public static void main(String[] args)  
+    {
+        String aC_option_s;
+        char aC_option_char;
+        Scanner stdIn = new Scanner(System.in);
+        double area; 
+        int side, base;
+        boolean quit = false;
+      
+        do{
+            System.out.println ("Choose the type of shape to find the area");
+            System.out.println ("\t1. Rectangle" + "\n\t2. Square" +"\n\t3. Triangle" + "\n\t4. Circle" +"\n\t5. Rhombus");
+            System.out.println ("\t6. quit");
+            
+            aC_option_s = stdIn.next();
+            aC_option_char=aC_option_s.charAt(0);
+        
+        
+               switch(aC_option_char) 
+               {
+                    case '1':
+                       System.out.println("Enter the side of the rectangle");
+                       while (!stdIn.hasNextInt()) {
+                           System.out.println("Must be a number");
+                           stdIn.next();
+                           
+                        }
+                       side = stdIn.nextInt();
+                       
+                       System.out.println("Enter the base of the rectangle");
+                      while (!stdIn.hasNextInt()) {
+                           System.out.println("Must be a number");
+                           stdIn.next();
+                        }
+                       base = stdIn.nextInt();
+                       area = side * base;
+                       System.out.println("The area of the rectangle is " + area);
+                       break;
+                     case '2':
+                       System.out.println("Enter the dimentions of the square");
+                       while (!stdIn.hasNextInt()) {
+                           System.out.println("Must be a number");
+                           stdIn.next();
+                        }
+                        side=stdIn.nextInt();
+                        System.out.println("Ener the base of the square");
+                       while (!stdIn.hasNextInt()) {
+                            System.out.println("Must be a number");
+                        }
+                       base=stdIn.nextInt();
+                       area=side * base;
+                       System.out.println("The area of the square is " + area);
+                       break;
+                    case '3':
+                        System.out.println("Enter the side of the triangle");
+                        while (!stdIn.hasNextInt()) {
+                            System.out.println("Must be a number");
+                        }
+                         side =stdIn.nextInt();
+                         System.out.println("Enter the base of the triangle");
+                        while(!stdIn.hasNextInt()) {
+                             System.out.println("Must be a number");
+                            }
+                         base =stdIn.nextInt();
+                         area=0.5*(side * base);
+                        System.out.println("The area of the triangle is " + area);
+                        break;
+                    case '4':
+                        System.out.println("Enter the dimentions of the circle");
+                        while (!stdIn.hasNextInt()) {
+                            System.out.println("Must be a number");
+                        }
+                        int radius=stdIn.nextInt();
+                        area = Math.pow(radius,2)*Math.PI; 
+                        System.out.println("The area of the circle is " + area);
+                        break;
+                     case '5':
+                        System.out.println("Enter the side of the rhombus");
+                        while (!stdIn.hasNextInt()){
+                            System.out.println("Must be a number");
+                        }
+                        side =stdIn.nextInt();
+                        System.out.println("Enter the base of the rhombs");
+                        while(!stdIn.hasNextInt()) {
+                            System.out.println("Must be a number");
+                        }
+                        base =stdIn.nextInt();
+                        area=(side * 2) + (base * 2);
+                        System.out.println("The area of the rhombus is " + area);  
+                        break;
+                     case '6':
+                        System.out.print("done.");
+                        quit = true;
+                        break;
+                     default:
+                        System.out.println("Please type a positive number");
+                        System.out.println("Try again");
+                }
+            
+        }while(!quit);
+    }// end main
+}// end class AreaCalculator
+
+      
+
